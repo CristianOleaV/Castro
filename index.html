@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap 5.1.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Castro</title>
+</head>
+
+<body>
+    <div class="container-fluid d-flex flex-column">
+        <div class="d-flex flex-row justify-content-start bg-gradient-success">
+            <div class="px-4 py-3 bgStrongGreen text-ligth cursorPointer" onclick="mostrarFormularioGuardar()">
+                Guardar
+            </div>
+            
+        </div>
+        <div class="d-none" id="formContainer">
+            <img src="img/close.png" alt="close" class="img-fluid cursorPointer closePosition" onclick="ocultarFormulario()">
+            
+            <div class="d-flex flex-column text-ligth pb-5 bg-gradient-success border rounded mx-auto my-auto col-6 py-5"
+                id="formulario">
+                <img src="img/logoCastro.jpg" alt="" class="px-5" width="250" height="100">
+                <div class="col-8 mx-auto d-flex flex-row justify-content-between my-2">
+                    <label for="nombre" class="col-5 my-auto">Ingrese Nombre:</label>
+                    <input type="text" class="col-5" id="nombre">
+                </div>
+                <div class="col-8 mx-auto d-flex flex-row justify-content-between my-2">
+                    <label for="precio" class="col-5 my-auto">Ingrese Precio:</label>
+                    <input type="text" onkeypress="return soloNumeros(event)" class="col-5" id="precio">
+                </div>
+                <div class="col-8 mx-auto d-flex flex-row justify-content-between my-2">
+                    <label for="cantidad" class="col-5 my-auto">Ingrese Cantidad:</label>
+                    <input type="text" onkeypress="return soloNumeros(event)" class="col-5" id="cantidad">
+                </div>
+                <div class="col-8 mx-auto d-flex flex-row justify-content-between my-2">
+                    <label for="despacho" class="col-5 my-auto">Ingrese Despacho:</label>
+                    <select class="col-5" name="despacho" id="despacho">
+                        <option value="Envío a domicilio">Envío a domicilio</option>
+                        <option value="Retiro en tienda">Retiro en tienda</option>
+                    </select>
+                </div>
+                <div class="col-8 mx-auto d-flex flex-row justify-content-between my-2">
+                    <label for="valorEnvio" class="col-5 my-auto">Cobro por envío:</label>
+                    <input type="text" onkeypress="return soloNumeros(event)" class="col-5" id="valorEnvio">
+                </div>
+                <div class="col-8 mx-auto d-flex flex-row justify-content-end my-2">
+                    <button class="col-5 d-none" id="btnGuardar" onclick="guardar()">Guardar Producto</button>
+                    <button class="col-5 d-none" id="btnActualizar" onclick="actualizar()">Actualizar Producto</button>
+                </div>
+                <!-- input hidden id -->
+                <input type="hidden" id="id">
+            </div>
+        </div>
+
+        <div id="listado" class="d-flex flex-row mt-5">
+            <div class="col-3 d-flex"><img class="imagenCastro mx-auto" src="img/logoCastro.JPG"></div>
+            <div class="d-flex flex-column col-9">                
+                <table class="table table-striped table-hover">
+                    <thead style="background-color:lightgreen">
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Despacho</th>
+                            <th scope="col">Valor Envío</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="datosTabla">
+                    </tbody>
+                </table>
+                <div id="paginado" class="d-flex flex-row">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jquery cdn 3.6.1 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"
+        integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- bootstrap cdn 5.1.1 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

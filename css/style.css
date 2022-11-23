@@ -1,0 +1,36 @@
+.text-ligth {
+    color: #fff;
+}
+.is-invalid {
+    border: 3px solid #dc3545;
+}
+.vh-100 {
+    height: 100vh;
+}
+.bg-gradient-success {
+    background: rgb(7,152,99);
+    background: linear-gradient(225deg, rgba(7,152,99,1) 0%, rgba(86,249,140,1) 85%);
+}
+li{
+    list-style: none;
+    padding: 3px;
+}
+.imagenCastro{
+    width: 250px;
+    height: 200px;
+
+}
+.bgStrongGreen{
+    background-color: #07a05a;
+}
+.cursorPointer{
+    cursor: pointer;
+}
+.closePosition{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 75px;
+    height: 75px;
+    z-index:100
+}
